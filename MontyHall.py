@@ -10,10 +10,31 @@ class PrizeDoor:
     def __str__(self):
         return str(self.getValue())
 
-def main(): 
+
+def turn(door):
+    validMove = False
+    while validMove == False:                      #(row < 1 or row > 3):
+        door = int(input("User, choose Door 1, 2 or 3"))            #should i add player to this
+        if (door < 1  or door > 3):
+            print("The choice must be between 1 and 3")
+    
+class NotPrizeDoor:
+    def __init__(self):
+        self.value = 1
+    def assignNotPrizeDoor(self):
+        self.value = randint(1,3)
+    def getValue(self):
+        return self.value
+    def __str__(self):
+        return str(self.getValue())
+    
+def main():
     prizeDoor = PrizeDoor()
     prizeDoor.assignPrizeDoor()
     print(prizeDoor)
-    
+    notPrizeDoor = NotPrizeDoor()
+    notPrizeDoor.assignNotPrizeDoor()
+    print(notPrizeDoor)
+
 if __name__ == "__main__": 
     main() 
