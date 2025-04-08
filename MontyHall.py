@@ -28,12 +28,34 @@ class NotPrizeDoor:
     def __str__(self):
         return str(self.getValue())
     
+#This function is created to play a single game and print the results after each game.
+def playGame():
+    #Initializing variables
+    winsNoSwitch = 0
+    lossesNoSwitch = 0
+    winsSwitch = 0
+    lossesSwitch = 0
+    gamesWon = 0
+    
+    #Calculating averages
+    print("The total number of Wins No Switch is :", winsNoSwitch)
+    print("The total number of Wins Switch is :", winsSwitch)
+    if winsNoSwitch > 0:
+        print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
+    if winsSwitch > 0:
+        print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
+
+
 def main():
     prizeDoor = PrizeDoor()
     prizeDoor.assignPrizeDoor()
-    print(prizeDoor)
+    
     notPrizeDoor = NotPrizeDoor()
     notPrizeDoor.assignNotPrizeDoor()
+
+   # while prizeDoor = notPrizeDoor
+    #
+    print(prizeDoor)
     print(notPrizeDoor)
 
 if __name__ == "__main__": 
