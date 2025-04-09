@@ -28,6 +28,37 @@ class NotPrizeDoor:
     def __str__(self):
         return str(self.getValue())
     
+class DoorSelect:
+    def pickPrizeDoor(self):
+        self.prizeDoor = randint(1,3)
+    def showLosingDoor(self):
+        self.losingDoor = randint(1,3)
+        while self.pickPrizeDoor == self.losingDoor:
+            self.losingDoor = randint(1,3)
+            while self.losingDoor == self.getUsersChoice:
+                 self.losingDoor = randint(1,3)
+        print("This is a losing door. ->", self.losingDoor)
+    def getUsersChoice(self):
+        self.usersChoice = int(input("User, choose Door 1, 2 or 3\n"))            
+        if (self.usersChoice < 1  or self.usersChoice > 3):
+            print("The choice must be between 1 and 3")
+    def pickSwitchedDoor(self):
+        self.switchedDoor = randint(1,3)
+        while self.switchedDoor == self.showLosingDoor:
+            self.switchedDoor = randint(1,3)
+    def getStayOrSwitch(self):
+        self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
+        if self.stayOrSwitch == "yes":
+            self.pickSwitchedDoor
+        if self.stayOrSwitch == "no":
+            return 
+        else:
+            print("Answer must be yes or no.")
+    def getResult(self):
+        return
+
+    
+    
 #This function is created to play a single game and print the results after each game.
 def playGame():
     #Initializing variables
@@ -44,19 +75,26 @@ def playGame():
         print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
     if winsSwitch > 0:
         print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
-
+    
 
 def main():
-    prizeDoor = PrizeDoor()
-    prizeDoor.assignPrizeDoor()
-    
-    notPrizeDoor = NotPrizeDoor()
-    notPrizeDoor.assignNotPrizeDoor()
+#     prizeDoor = PrizeDoor()
+#     prizeDoor.assignPrizeDoor()
+#     playGame()
+#     notPrizeDoor = NotPrizeDoor()
+#     notPrizeDoor.assignNotPrizeDoor()
 
-   # while prizeDoor = notPrizeDoor
-    #
-    print(prizeDoor)
-    print(notPrizeDoor)
+#    # while prizeDoor = notPrizeDoor
+#     #
+#     print(prizeDoor)
+#     print(notPrizeDoor)
+    doorSelect = DoorSelect()
+    doorSelect.pickPrizeDoor()
+    doorSelect.getUsersChoice()
+    doorSelect.showLosingDoor()
+    doorSelect.getStayOrSwitch()
+    doorSelect.pickSwitchedDoor()
+    
 
 if __name__ == "__main__": 
     main() 
