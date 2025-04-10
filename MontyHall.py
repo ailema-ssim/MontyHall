@@ -46,25 +46,6 @@ class DoorSelect:
         if self.winsSwitch > 0:
             print("The percentage to win with a switch is : ", 100 * (self.winsSwitch / self.gamesWon), "%")
 
-
-
-
-#This function is created to play a single game and print the results after each game.
-    def playGame(self):
-    #Initializing variables
-        winsNoSwitch = 0
-        lossesNoSwitch = 0
-        winsSwitch = 0
-        lossesSwitch = 0
-        gamesWon = 0
-    
-        #Calculating averages
-        print("The total number of Wins No Switch is :", winsNoSwitch)
-        print("The total number of Wins Switch is :", winsSwitch)
-        if winsNoSwitch > 0:
-            print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
-        if winsSwitch > 0:
-            print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
     
 
 def main():
