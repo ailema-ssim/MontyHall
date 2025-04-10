@@ -1,32 +1,5 @@
 from random import randint
 
-class PrizeDoor:
-    def __init__(self):
-        self.value = 1
-    def assignPrizeDoor(self):
-        self.value = randint(1,3)
-    def getValue(self):
-        return self.value
-    def __str__(self):
-        return str(self.getValue())
-
-
-def turn(door):
-    validMove = False
-    while validMove == False:                      #(row < 1 or row > 3):
-        door = int(input("User, choose Door 1, 2 or 3"))            #should i add player to this
-        if (door < 1  or door > 3):
-            print("The choice must be between 1 and 3")
-    
-class NotPrizeDoor:
-    def __init__(self):
-        self.value = 1
-    def assignNotPrizeDoor(self):
-        self.value = randint(1,3)
-    def getValue(self):
-        return self.value
-    def __str__(self):
-        return str(self.getValue())
     
 class DoorSelect:
     def pickPrizeDoor(self):
@@ -76,23 +49,14 @@ def playGame():
     
 
 def main():
-#     prizeDoor = PrizeDoor()
-#     prizeDoor.assignPrizeDoor()
-#     playGame()
-#     notPrizeDoor = NotPrizeDoor()
-#     notPrizeDoor.assignNotPrizeDoor()
 
-#    # while prizeDoor = notPrizeDoor
-#     #
-#     print(prizeDoor)
-#     print(notPrizeDoor)
    ## while True:
         doorSelect = DoorSelect()
         doorSelect.pickPrizeDoor()
         doorSelect.getUsersChoice()
         doorSelect.showLosingDoor()
         doorSelect.getStayOrSwitch()
-    
+        print(doorSelect.usersChoice)
 
 if __name__ == "__main__": 
     main() 
