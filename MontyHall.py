@@ -40,16 +40,15 @@ class DoorSelect:
         self.usersChoice = int(input("User, choose Door 1, 2 or 3\n"))            
         if (self.usersChoice < 1  or self.usersChoice > 3):
             print("The choice must be between 1 and 3")
-            self.usersChoice = int(input("User, choose Door 1, 2 or 3\n"))
-    def pickSwitchedDoor(self):
-        self.switchedDoor = randint(1,3)
-        while self.switchedDoor == self.losingDoor or self.switchedDoor == self.usersChoice:
-            self.switchedDoor = randint(1,3)
+            self.usersChoice = int(input("User, choose Door 1, 2 or 3\n")) 
     def getStayOrSwitch(self):
         self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
         if self.stayOrSwitch == "yes":
-           self.switchedDoor
-        if self.stayOrSwitch == "no":
+            origionalUsersChoice = self.usersChoice
+            self.usersChoice == randint(1,3)
+            while self.usersChoice == origionalUsersChoice:
+                self.usersChoice == randint(1,3)
+        elif self.stayOrSwitch == "no":
             return 
         else:
             print("Answer must be yes or no.")
