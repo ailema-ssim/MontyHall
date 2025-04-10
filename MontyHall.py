@@ -27,26 +27,44 @@ class DoorSelect:
             print("Answer must be yes or no.")
             self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
     def getResult(self):
-        return
+        if self.prizeDoor == self.usersChoice:
+            print("You found the prize!")
+            return
+        elif self.prizeDoor != self.usersChoice:
+            print("You did not find the prize.")
+            return
+    def statistics(self):
+        self.winsNoSwitch = 0
+        self.lossesNoSwitch = 0
+        self.winsSwitch = 0
+        self.lossesSwitch = 0
+        self.gamesWon = 0
+        print("The total number of Wins No Switch is :", self.winsNoSwitch)
+        print("The total number of Wins Switch is :", self.winsSwitch)
+        if self.winsNoSwitch > 0:
+            print("The percentage to win without a switch is : ", 100 * (self.winsNoSwitch / self.gamesWon), "%")
+        if self.winsSwitch > 0:
+            print("The percentage to win with a switch is : ", 100 * (self.winsSwitch / self.gamesWon), "%")
 
-    
-    
+
+
+
 #This function is created to play a single game and print the results after each game.
-def playGame():
+    def playGame(self):
     #Initializing variables
-    winsNoSwitch = 0
-    lossesNoSwitch = 0
-    winsSwitch = 0
-    lossesSwitch = 0
-    gamesWon = 0
+        winsNoSwitch = 0
+        lossesNoSwitch = 0
+        winsSwitch = 0
+        lossesSwitch = 0
+        gamesWon = 0
     
-    #Calculating averages
-    print("The total number of Wins No Switch is :", winsNoSwitch)
-    print("The total number of Wins Switch is :", winsSwitch)
-    if winsNoSwitch > 0:
-        print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
-    if winsSwitch > 0:
-        print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
+        #Calculating averages
+        print("The total number of Wins No Switch is :", winsNoSwitch)
+        print("The total number of Wins Switch is :", winsSwitch)
+        if winsNoSwitch > 0:
+            print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
+        if winsSwitch > 0:
+            print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
     
 
 def main():
