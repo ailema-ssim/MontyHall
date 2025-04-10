@@ -25,6 +25,7 @@ class DoorSelect:
             return 
         else:
             print("Answer must be yes or no.")
+            self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
     def getResult(self):
         return
 
