@@ -32,9 +32,9 @@ class DoorSelect:
             print("Answer must be yes or no.")
             self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
     def getResult(self):
-        self.gamesWon += 1
         if self.prizeDoor == self.usersChoice:
             print("You found the prize!")
+            self.gamesWon += 1
             if self.stayOrSwitch == "yes":
                 self.winsSwitch += 1
             elif self.stayOrSwitch == "no":
@@ -48,6 +48,7 @@ class DoorSelect:
     def statistics(self):
         print("The total number of Wins No Switch is :", self.winsNoSwitch)
         print("The total number of Wins Switch is :", self.winsSwitch)
+        print("Total wins all together:", self.gamesWon )
         if self.winsNoSwitch > 0:
             print("The percentage to win without a switch is : ", 100 * (self.winsNoSwitch / self.gamesWon), "%")
         if self.winsSwitch > 0:
