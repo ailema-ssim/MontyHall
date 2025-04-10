@@ -18,9 +18,9 @@ class DoorSelect:
         self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
         if self.stayOrSwitch == "yes":
             origionalUsersChoice = self.usersChoice
-            self.usersChoice == randint(1,3)
+            self.usersChoice = randint(1,3)
             while self.usersChoice == origionalUsersChoice:
-                self.usersChoice == randint(1,3)
+                self.usersChoice = randint(1,3)
         elif self.stayOrSwitch == "no":
             return 
         else:
