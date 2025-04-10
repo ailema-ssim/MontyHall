@@ -1,7 +1,12 @@
 from random import randint
 
-    
 class DoorSelect:
+    def __init__(self):
+        self.winsNoSwitch = 0
+        self.lossesNoSwitch = 0
+        self.winsSwitch = 0
+        self.lossesSwitch = 0
+        self.gamesWon = 0
     def pickPrizeDoor(self):
         self.prizeDoor = randint(1,3)
     def showLosingDoor(self):
@@ -27,18 +32,20 @@ class DoorSelect:
             print("Answer must be yes or no.")
             self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
     def getResult(self):
+        self.gamesWon += 1
         if self.prizeDoor == self.usersChoice:
             print("You found the prize!")
-            return
+            if self.stayOrSwitch == "yes":
+                self.winsSwitch += 1
+            elif self.stayOrSwitch == "no":
+                self.winsNoSwitch += 1
         elif self.prizeDoor != self.usersChoice:
             print("You did not find the prize.")
-            return
+            if self.stayOrSwitch == "yes":
+                self.lossesSwitch +=1
+            elif self.stayOrSwitch == "no":
+                self.lossesNoSwitch += 1
     def statistics(self):
-        self.winsNoSwitch = 0
-        self.lossesNoSwitch = 0
-        self.winsSwitch = 0
-        self.lossesSwitch = 0
-        self.gamesWon = 0
         print("The total number of Wins No Switch is :", self.winsNoSwitch)
         print("The total number of Wins Switch is :", self.winsSwitch)
         if self.winsNoSwitch > 0:
@@ -52,11 +59,14 @@ def main():
 
    ## while True:
         doorSelect = DoorSelect()
+        doorSelect.__init__() 
         doorSelect.pickPrizeDoor()
         doorSelect.getUsersChoice()
         doorSelect.showLosingDoor()
         doorSelect.getStayOrSwitch()
         print(doorSelect.usersChoice)
+        doorSelect.getResult()
+        doorSelect.statistics()
 
 if __name__ == "__main__": 
     main() 
