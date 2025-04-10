@@ -33,10 +33,8 @@ class DoorSelect:
         self.prizeDoor = randint(1,3)
     def showLosingDoor(self):
         self.losingDoor = randint(1,3)
-        while self.pickPrizeDoor == self.losingDoor:
+        while self.prizeDoor == self.losingDoor and self.usersChoice:  
             self.losingDoor = randint(1,3)
-            while self.losingDoor == self.getUsersChoice:
-                 self.losingDoor = randint(1,3)
         print("This is a losing door. ->", self.losingDoor)
     def getUsersChoice(self):
         self.usersChoice = int(input("User, choose Door 1, 2 or 3\n"))            
@@ -44,12 +42,13 @@ class DoorSelect:
             print("The choice must be between 1 and 3")
     def pickSwitchedDoor(self):
         self.switchedDoor = randint(1,3)
-        while self.switchedDoor == self.showLosingDoor:
+        while self.switchedDoor == self.losingDoor:
             self.switchedDoor = randint(1,3)
     def getStayOrSwitch(self):
         self.stayOrSwitch = input("Do you want to switch doors, yes or no?\n")
         if self.stayOrSwitch == "yes":
-            self.pickSwitchedDoor
+           ## self.pickSwitchedDoor
+           return
         if self.stayOrSwitch == "no":
             return 
         else:
@@ -88,12 +87,13 @@ def main():
 #     #
 #     print(prizeDoor)
 #     print(notPrizeDoor)
-    doorSelect = DoorSelect()
-    doorSelect.pickPrizeDoor()
-    doorSelect.getUsersChoice()
-    doorSelect.showLosingDoor()
-    doorSelect.getStayOrSwitch()
-    doorSelect.pickSwitchedDoor()
+    while True:
+        doorSelect = DoorSelect()
+        doorSelect.pickPrizeDoor()
+        doorSelect.getUsersChoice()
+        doorSelect.showLosingDoor()
+   ## doorSelect.getStayOrSwitch()
+    ## doorSelect.pickSwitchedDoor()
     
 
 if __name__ == "__main__": 
