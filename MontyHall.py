@@ -29,7 +29,7 @@ def statistics():
     # Prints probability of winning without switching Doors
     if winsNoSwitch > 0:
         print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
-    # Prints Porbability of winning with switching DOors
+    # Prints Porbability of winning with switching Doors
     if winsSwitch > 0:
         print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
 
