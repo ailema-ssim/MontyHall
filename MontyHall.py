@@ -4,7 +4,7 @@
 # A Prize Door is chosen and the user must find it.
 # The user selects a door, then a different door is shown not to have the Prize.
 # The user has the chance to stay with their original choice or swap to the last unopened door.
-# The purpose oif this simulation is to prove or disprove the MOnty Hall Problem.
+# The purpose if this simulation is to prove or disprove the Monty Hall Problem.
 
 from random import randint
 
@@ -25,17 +25,17 @@ def statistics():
     global gamesWon
     print("The total number of Wins No Switch is :", winsNoSwitch)
     print("The total number of Wins Switch is :", winsSwitch)
-    print("Total wins all together:", gamesWon )
+    print("Total wins all together:", gamesWon)
     # Prints probability of winning without switching Doors
     if winsNoSwitch > 0:
         print("The percentage to win without a switch is : ", 100 * (winsNoSwitch / gamesWon), "%")
-    # Prints Porbability of winning with switching Doors
+    # Prints probability of winning with switching Doors
     if winsSwitch > 0:
         print("The percentage to win with a switch is : ", 100 * (winsSwitch / gamesWon), "%")
 
 # Tracking wins/losses and switch/no switch and adding to variables when called for
 def getResult(doorSelect):
-    # Intoducing global variables
+    # Introducing global variables
     global winsNoSwitch
     global lossesNoSwitch
     global winsSwitch
